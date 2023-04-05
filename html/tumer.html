@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/tumor.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="../assets/logo.png" alt="hndi" height="55px" />
+        <ul>
+          <li><a href="../index.html">home</a></li>
+          <li><a href="./appointment.html">appointment</a></li>
+          <li><a href="#">contact</a></li>
+          <li><a href="#">feedback</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="home_sec">
+      <div class="main_sec_tumor m_flex">
+        <div class="image_test_sec">
+          <div class="upload_sec">
+            <img src="" alt="" class="output" id="output" />
+            <div class="imggg">
+              <label for="file-input">
+                <img
+                  id="output1"
+                  src="../assets/upload.png"
+                  alt="uploadlogo"
+                  height="150px"
+                />
+              </label>
+              <input
+                type="file"
+                id="file-input"
+                accept="image/*"
+                onchange="loadFile(event)"
+                hidden
+              />
+              <p>upload your image</p>
+              <p>image size must be less than <b>2MB</b></p>
+            </div>
+          </div>
+          <button class="btn_check">Check</button>
+        </div>
+        <div class="img_sec">
+          <img src="../assets/doctor.png" alt="doctor_image" height="550" />
+        </div>
+      </div>
+    </section>
+
+    <script src="../script.js" defer></script>
+  </body>
+</html>
