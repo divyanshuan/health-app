@@ -14,8 +14,10 @@
         <img src="../assets/logo.png" alt="hndi" height="55px" />
         <ul>
           <li><a href="../index.html">home</a></li>
-          <li><a href="./appointment.html">appointment</a></li>
-          <li><a href="#">contact</a></li>
+          <li>
+            <a  href="./appointment.html">appointment</a>
+          </li>
+          <li><a href="./contact.html">contact</a></li>
           <li><a href="#">feedback</a></li>
         </ul>
       </nav>
@@ -47,8 +49,27 @@
           </div>
           <button class="btn_check">Check</button>
         </div>
+
         <div class="img_sec">
-          <img src="../assets/doctor.png" alt="doctor_image" height="550" />
+          <img
+            id="doctorimg"
+            src="../assets/doctor.png"
+            alt="doctor_image"
+            height="550"
+          />
+          <div class="chart_sec hide_img" id="res_sec">
+            <h1>Your Tumor Report</h1>
+            <div class="graph">
+              <div class="result">
+                <p>positive</p>
+                <div class="yes"></div>
+              </div>
+              <div class="result">
+                <p>Negative</p>
+                <div class="no"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

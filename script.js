@@ -1,6 +1,9 @@
 const checkbtn = document.querySelector(".btn_check");
 const image = document.getElementById("file-input");
 
+const chartyes = document.querySelector(".yes");
+const chartno = document.querySelector(".no");
+
 const URLL = "https://teachablemachine.withgoogle.com/models/xr97Ebrkv/"; // Replace with the URL where the model and metadata files are located
 let model, labelContainer, maxPredictions;
 
@@ -30,6 +33,9 @@ async function init() {
 }
 
 checkbtn.addEventListener("click", async () => {
+  document.getElementById("doctorimg").classList.add("hide_img");
+  document.getElementById("res_sec").classList.remove("hide_img");
+
   console.log("Image loaded:", image.files[0]);
   const reader = new FileReader();
   reader.readAsDataURL(image.files[0]);
@@ -60,9 +66,13 @@ async function predict(image) {
   const prediction = await model.predict(image);
   console.log("Prediction:", prediction);
   if (prediction[0].probability > prediction[1].probability) {
-    console.log("yes");
+    var percent = prediction[0].probability.toFixed(2) * 100;
+    chartyes.classList.add("active");
+    console.log("yes", percent);
   } else {
-    console.log("no");
+    var percent = Math.round(prediction[1].probability * 100) / 100;
+    chartno.classList.add("active");
+    console.log("no", percent);
   }
 }
 init();
